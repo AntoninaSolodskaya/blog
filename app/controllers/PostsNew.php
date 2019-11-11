@@ -1,5 +1,7 @@
 <?php
 
+namespace app\controllers;
+
 class PostsNew
 {
     
@@ -18,5 +20,9 @@ class PostsNew
         echo 'PostsNew::testPage';
     }
 
+    public function before()
+    {
+        echo 'PostsNew::before';
+    }
     
 }
