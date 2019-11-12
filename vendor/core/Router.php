@@ -50,10 +50,9 @@ class Router
     public static function dispatch($url)
     {
         $url = self::removeQueryString($url);
-        var_dump($url);
         if(self::matchRoute($url))
         {
-            $controller = 'app\controllers\\' . self::$route['controller'];
+            $controller = 'app\controllers\\' . self::$route['controller'] . 'Controller';
             if(class_exists($controller))
             {
                 $cObj = new $controller(self::$route);
@@ -62,6 +61,7 @@ class Router
                 if(method_exists($cObj, $action))
                 {
                     $cObj->$action();
+                    $cObj->getView();
                 }
                 else
                 {

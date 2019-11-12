@@ -2,7 +2,8 @@
 
 namespace app\controllers;
 
-class Posts extends \vendor\core\base\Controller{
+class PostsController extends App
+{
 
     public function indexAction()
     {
